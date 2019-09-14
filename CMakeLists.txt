@@ -9,4 +9,9 @@ if(MSVC)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif(MSVC)
 
-enable_testing()
+# Options
+option(WITH_testing "Allows tests to be run" ON)
+
+if(WITH_testing MATCHES ON)
+   enable_testing()
+endif(WITH_testing MATCHES ON)
